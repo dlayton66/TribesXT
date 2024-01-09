@@ -32,7 +32,7 @@ Latest release: 01/02/2024
 ## What is Tribes XT?
 Tribes XT is a plugin developed by Altimor for [Starsiege: Tribes](https://en.wikipedia.org/wiki/Starsiege:_Tribes) which aims to modernize its netcode and minimize player input lag.
 
-By default, a Tribes server waits for input from the client and simply responds to that input when it's received.  If a player pinging 250ms attempts to fire a disc, that disc will be fired on the server at least 250ms after the input was given, and the client will not see that disc has been fired locally until it receives a response from the server.  This leads to an experience with significant input lag that is heavily dependent on a player's connection.
+By default, a Tribes server waits for input from the client and simply responds to that input when it's received.  If a player pinging 250ms attempts to fire a disc, that disc will be fired on the server around 125ms after the input was given, and the client will not see that disc has been fired locally until it receives a response from the server after 250ms.  This leads to an experience with significant input lag that is heavily dependent on a player's connection.
 
 In Tribes XT, that disc is fired immediately on the client, reducing input lag to be almost nonexistent.  When the server receives notice that the disc was fired, it retroactively adjusts to account for when that occurred on the client, syncing up what a player sees on their client and what happens on the server.  The cumulative effect of this is an extremely smooth and responsive experience regardless of a player's connection.
 
